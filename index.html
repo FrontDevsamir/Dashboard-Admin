@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- material icons  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./dashboard.css">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./aside.css">
+    <link rel="stylesheet" href="./table.css">
+    <title>Responsive DashBoard Using HTML - CSS Y JS</title>
+</head>
+<body>
+    
+    <div class="container">
+        <aside class="aside aside--left">
+            <div class="aside__top flex align-center flex-center">
+                <div class="logo">
+                    <img src="./images/logo.png" alt="">
+                    <h2 class="logo__text">EGA <span class="danger">TOR</span></h2>
+                </div>
+                <div class="btn-close" id="btn-close">
+                    <span class="material-icons-sharp">close</span>
+                </div>
+            </div>
+
+            <nav class="sidebar flex flex-column">
+                <a class="sidebar-item flex align-center" href="#">
+                    <span class="material-icons-sharp">dashboard</span>
+                    <h3 class="sidebar-item__text">DashBoard</h3>
+                </a>
+                <a class="sidebar-item flex align-center" href="#">
+                    <span class="material-icons-sharp">person_outline</span>
+                    <h3 class="sidebar-item__text">Customers</h3>
+                </a>
+                <a class="sidebar-item flex align-center" href="#">
+                    <span class="material-icons-sharp">receipt_long</span>
+                    <h3 class="sidebar-item__text">Orders</h3>
+                </a>
+                <a class="sidebar-item flex align-center" href="#">
+                    <span class="material-icons-sharp">insights</span>
+                    <h3 class="sidebar-item__text">Analytics</h3>
+                </a>
+                <a class="sidebar-item flex align-center" href="#">
+                    <span class="material-icons-sharp">mail_outline</span>
+                    <h3 class="sidebar-item__text">Messages</h3>
+                    <span class="sidebar-item__message-count">26</span>
+                </a>
+                <a class="sidebar-item flex align-center sidebar-item--active" href="#">
+                    <span class="material-icons-sharp">inventory</span>
+                    <h3 class="sidebar-item__text">Products</h3>
+                </a>
+                <a class="sidebar-item flex align-center" href="#">
+                    <span class="material-icons-sharp">report_gmailerrorred</span>
+                    <h3 class="sidebar-item__text">Reports</h3>
+                </a>
+                <a class="sidebar-item flex align-center" href="#">
+                    <span class="material-icons-sharp">settings</span>
+                    <h3 class="sidebar-item__text">Settings</h3>
+                </a>
+                <a class="sidebar-item flex align-center" href="#">
+                    <span class="material-icons-sharp">add</span>
+                    <h3 class="sidebar-item__text">Add Product</h3>
+                </a>
+                
+                
+                <a class="sidebar-item flex align-center" href="#">
+                    <span class="material-icons-sharp">logout</span>
+                    <h3 class="sidebar-item__text">Logout</h3>
+                </a>
+            </n>
+        </aside>
+
+        <main class="main" id="main">       
+            <div class="totals">
+                <h1 class="title flex align-center">Dashboard</h1>
+                
+                <div class="totals__date">
+                    <input class="input" type="date" name="date" id="date">
+                </div>
+                
+                <div class="insights">
+                    <div class="insights__card insights__card--sales">
+                        <span class="material-icons-sharp">analytics</span>
+                        <div class="insights__middle">
+                            <div class="insights__info">
+                                <h3 class="insights__text">Total Sales</h3>
+                                <h1 class="insights__count">$25,024</h1>
+                            </div>
+                            <div class="insights__progress">
+                                <svg class="insights__graphic">
+                                    <circle cx="38" cy="38" r="36"></circle>
+                                </svg>
+                                <p class="insights__percentage">
+                                    81%
+                                </p>
+                            </div>
+                        </div>
+                        <small class="text-muted">
+                            Last 24 Hours
+                        </small>
+                    </div>
+                    <!-- ------------- END OF SALES -------------- -->
+                    <div class="insights__card insights__card--expenses">
+                        <span class="material-icons-sharp">analytics</span>
+                        <div class="insights__middle">
+                            <div class="insights__info">
+                                <h3 class="insights__text">Total Expenses</h3>
+                                <h1 class="insights__count">$15,024</h1>
+                            </div>
+                            <div class="insights__progress">
+                                <svg class="insights__graphic">
+                                    <circle cx="38" cy="38" r="36"></circle>
+                                </svg>
+                                <p class="insights__percentage">
+                                    21%
+                                </p>
+                            </div>
+                        </div>
+                        <small class="text-muted">
+                            Last 24 Hours
+                        </small>
+                    </div>
+                    <!-- ------------- END OF EXPENSES -------------- -->
+                    <div class="insights__card insights__card--income">
+                        <span class="material-icons-sharp">analytics</span>
+                        <div class="insights__middle">
+                            <div class="insights__info">
+                                <h3 class="insights__text">Total Income</h3>
+                                <h1 class="insights__count">$5,024</h1>
+                            </div>
+                            <div class="insights__progress">
+                                <svg class="insights__graphic">
+                                    <circle cx="38" cy="38" r="36"></circle>
+                                </svg>
+                                <p class="insights__percentage">
+                                    51%
+                                </p>
+                            </div>
+                        </div>
+                        <small class="text-muted">
+                            Last 24 Hours
+                        </small>
+                    </div>
+                    <!-- ------------- END OF INCOMES -------------- -->
+                </div>
+            </div>
+            <!-- -------------------- END OF TOTALS ------------>
+            <div class="recent-orders">
+                    <h2 class="subtitle">Recent Orders</h2>
+                    <div class="table-container">
+                        <table class="table text-center">
+                            <thead class="table__head">
+                                <tr class="table__row">
+                                    <th>Product Name</th>
+                                    <th>Product Number</th>
+                                    <th>Payment</th>
+                                    <th>Status</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody class="table__body">
+                                <tr class="table__row">
+                                    <td>Foldable Mini Drone</td>
+                                    <td>83526</td>
+                                    <td>Due</td>
+                                    <td class="warning">Pending</td>
+                                    <td class="primary">Details</td>
+                                </tr>
+                                <tr class="table__row">
+                                    <td>Foldable Mini Drone</td>
+                                    <td>83526</td>
+                                    <td>Due</td>
+                                    <td class="warning">Pending</td>
+                                    <td class="primary">Details</td>
+                                </tr>
+                                <tr class="table__row">
+                                    <td>Foldable Mini Drone</td>
+                                    <td>83526</td>
+                                    <td>Due</td>
+                                    <td class="warning">Pending</td>
+                                    <td class="primary">Details</td>
+                                </tr>
+                                <tr class="table__row">
+                                    <td>Foldable Mini Drone</td>
+                                    <td>83526</td>
+                                    <td>Due</td>
+                                    <td class="warning">Pending</td>
+                                    <td class="primary">Details</td>
+                                </tr>
+                                <tr class="table__row">
+                                    <td>Foldable Mini Drone</td>
+                                    <td>83526</td>
+                                    <td>Due</td>
+                                    <td class="warning">Pending</td>
+                                    <td class="primary">Details</td>
+                                </tr>
+                                <tr class="table__row">
+                                    <td>Foldable Mini Drone</td>
+                                    <td>83526</td>
+                                    <td>Due</td>
+                                    <td class="warning">Pending</td>
+                                    <td class="primary">Details</td>
+                                </tr>
+                                <tr class="table__row">
+                                    <td>Foldable Mini Drone</td>
+                                    <td>83526</td>
+                                    <td>Due</td>
+                                    <td class="warning">Pending</td>
+                                    <td class="primary">Details</td>
+                                </tr>
+                                <tr class="table__row">
+                                    <td>Foldable Mini Drone</td>
+                                    <td>83526</td>
+                                    <td>Due</td>
+                                    <td class="warning">Pending</td>
+                                    <td class="primary">Details</td>
+                                </tr>
+                                <tr class="table__row">
+                                    <td>Foldable Mini Drone</td>
+                                    <td>83526</td>
+                                    <td>Due</td>
+                                    <td class="warning">Pending</td>
+                                    <td class="primary">Details</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- <a href="#">Show All</a> -->
+            </div>
+
+
+
+            <div class="main__aside">
+                <div class="main__top flex flex-end align-center">
+                    <button class="menu" id="menu-btn">
+                        <span class="material-icons-sharp">menu</span>
+                    </button>
+                    <div class="theme-toggler flex flex-between align-center">
+                        <span class="material-icons-sharp active">light_mode</span>
+                        <span class="material-icons-sharp">dark_mode</span>
+                    </div>
+                    <div class="main__profile">
+                        <div class="profile__info">
+                            <p class="profile__name">Hey, <b>Daniel</b></p>
+                            <small class="text-muted">Admin</small>
+                        </div>
+                        <div class="profile__photo">
+                            <img src="./images/profile-1.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+                <!-- ------------- END OF TOP ------------- -->
+    
+                <div class="recent-updates">
+                    <h2 class="subtitle">Recent Updates</h2>
+                    <div class="updates">
+                        <div class="update">
+                            <div class="profile__photo">
+                                <img src="./images/profile-2.jpg" alt="">
+                            </div>
+                            <div class="update__message">
+                                <p class="message__paragraph"><b>Mike Tyson</b> received his order of Night lion tech GPS drone</p>
+                                <small class="text-muted">2 Minutes Ago</small>
+                            </div>
+                        </div>
+                        <div class="update">
+                            <div class="profile__photo">
+                                <img src="./images/profile-3.jpg" alt="">
+                            </div>
+                            <div class="update__message">
+                                <p class="message__paragraph"><b>Mike Tyson</b> received his order of Night lion tech GPS drone</p>
+                                <small class="text-muted">2 Minutes Ago</small>
+                            </div>
+                        </div>
+                        <div class="update">
+                            <div class="profile__photo">
+                                <img src="./images/profile-4.jpg" alt="">
+                            </div>
+                            <div class="update__message">
+                                <p class="message__paragraph"><b>Mike Tyson</b> received his order of Night lion tech GPS drone</p>
+                                <small class="text-muted">2 Minutes Ago</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- ------------------- END OF RECENT UPDATES ======== -->
+                <div class="sales-analytics">
+                    <h2 class="subtitle">Sales Analytics</h2>
+                    <div class="analytics__item analytics__online flex align-center">
+                        <div class="icon icon--analytics">
+                            <span class="material-icons-sharp">shopping_cart</span>
+                        </div>
+                        <div class="analytics__info">
+                            <div class="info">
+                                <h3 class="info__subtitle">ONLINE ORDERS</h3>
+                                <small class="text-muted">Last 24 Hours</small>
+                            </div>
+                            <h5 class="success">+39%</h5>
+                            <h3 class="analytics__number">3849</h3>
+                        </div>
+                    </div>
+                    <div class="analytics__item analytics__offline flex align-center">
+                        <div class="icon icon--analytics">
+                            <span class="material-icons-sharp">shopping_cart</span>
+                        </div>
+                        <div class="analytics__info">
+                            <div class="info">
+                                <h3 class="info__subtitle">OFFLINE ORDERS</h3>
+                                <small class="text-muted">Last 24 Hours</small>
+                            </div>
+                            <h5 class="danger">-19%</h5>
+                            <h3 class="analytics__number">1249</h3>
+                        </div>
+                    </div>
+                    <div class="analytics__item analytics__customer flex align-center">
+                        <div class="icon icon--analytics">
+                            <span class="material-icons-sharp">shopping_cart</span>
+                        </div>
+                        <div class="analytics__info">
+                            <div class="info">
+                                <h3 class="info__subtitle">CUSTOMER ORDERS</h3>
+                                <small class="text-muted">Last 24 Hours</small>
+                            </div>
+                            <h5 class="success">+59%</h5>
+                            <h3 class="analytics__number">8549</h3>
+                        </div>
+                    </div>
+
+                    <!-- ADD PRODUCT -->
+                    <div class="add-product flex align-center flex-center">
+                        <div class="add-product__info flex align-center">
+                            <span class="material-icons-sharp">add</span>
+                            <h3 class="add-product__text">Add Product</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+        <!-- -------------------- END OF MAIN ------------------ -->
+        
+    </div>
+
+    <script src="./index.js"></script>
+
+</body>
+</html>

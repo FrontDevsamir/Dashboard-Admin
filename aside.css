@@ -1,0 +1,166 @@
+
+
+.aside {
+    height: 100vh;
+    position: sticky;
+    top: 0;
+}
+
+.aside__top {
+    height: 80px;
+}
+
+.logo {
+    display: flex;
+    gap: .8rem;
+}
+
+.logo img {
+    width: 2rem;
+    height: 2rem;
+}
+
+.btn-close {
+    display: none;
+}
+
+
+/* ================== SIDEBAR =============== */
+.sidebar {
+    height: calc(100vh - 80px - 5rem);
+    position: relative;
+    top: 3rem;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.sidebar-item {
+    color: var(--color-info-dark);
+    margin-left: 2rem;
+    gap: var(--gap-1);
+    height: 3.8rem;
+    flex-shrink: 0;
+}
+
+.sidebar-item span {
+    font-size: 1.6rem;
+    transition: margin-left 300ms ease;
+}
+
+.sidebar-item--active {
+    color: var(--color-primary);
+    background-color: var(--color-light);
+    margin-left: 0;
+}
+
+.sidebar-item--active::before {
+    content: '';
+    width: 10px;
+    height: 100%;
+    background-color: var(--color-primary);
+}
+
+.sidebar-item--active span {
+    margin-left: calc(1rem - 5px);
+}
+
+.sidebar-item:hover {
+    color: var(--color-primary);
+}
+
+.sidebar-item:hover span {
+    margin-left: 1rem;
+}
+
+.sidebar-item .sidebar-item__message-count {
+    background-color: var(--color-danger);
+    color: var(--color-white);
+    padding: 2px 10px;
+    font-weight: 600;
+    font-size: .9rem;
+    border-radius: var(--border-radius-1);
+}
+
+.sidebar-item__text {
+    font-weight: 500;
+}
+
+.sidebar-item:last-child {
+    position: relative;
+    top: 2rem;
+    width: 100%;
+    color: var(--color-danger);
+}
+
+/* =============  FIN  ================== */
+
+
+
+/* >> MEDIA QUERIS */
+@media screen and (max-width: 1200px) {
+    .logo__text {
+        display: none;
+    }
+
+    .sidebar-item {
+        width: 5.6rem;
+    }
+
+    .sidebar-item__text {
+        display: none;
+    }
+
+}
+
+
+
+@media screen and (max-width: 992px) {
+    .aside {
+        position: fixed;
+        left: -100%;
+        background-color: var(--color-white);
+        width: 18rem;
+        z-index: 1;
+        box-shadow: 1rem 3rem 4rem var(--color-light);
+        height: 100vh;
+        padding-left: var(--card-padding);
+    }
+
+    @keyframes showMenu {
+        to {
+            left: 0;
+        }
+    }
+    
+    @keyframes hiddeMenu {
+        from {
+            left: -100%;
+        }
+    }
+
+    .logo {
+        margin-left: 1rem;
+    }
+
+    .logo__text {
+        display: inline;
+    }
+
+    .sidebar-item {
+        width: 100%;
+        height: 3.4rem;
+    }
+
+    .sidebar-item__text {
+        display: block;
+    }
+
+    .btn-close {
+        display: inline-block;
+        cursor: pointer;
+    }
+
+    .aside__top {
+        justify-content: space-around;
+    }
+}

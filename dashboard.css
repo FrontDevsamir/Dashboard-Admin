@@ -1,0 +1,367 @@
+/* ==================== MAIN ==================== */
+.main {
+    display: grid;
+    grid-template-areas:
+        "totals main__aside"
+        "table main__aside";
+    gap: var(--gap-2);
+}
+
+/*>> MAIN TOTALS */
+.totals {
+    grid-area: totals;
+}
+
+.title {
+    height: 80px;
+}
+
+.totals__date {
+    display: inline-block;
+    background-color: var(--color-light);
+    border-radius: var(--border-radius-1);
+    margin: 1rem 0;
+    padding: 0.5rem 1.6rem;
+}
+
+.input[type="date"] {
+    background-color: transparent;
+    color: var(--color-dark);
+    font-family: inherit;
+}
+
+/* >> INSIGHTS */
+.insights {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--gap-1);
+}
+
+.insights__card {
+    background-color: var(--color-white);
+    padding: var(--card-padding);
+    border-radius: var(--card-border-radius);
+    margin-top: 1rem;
+    box-shadow: var(--box-shadow);
+    transition: box-shadow 300ms ease, background-color 300ms ease;
+}
+
+.insights__card:hover {
+    box-shadow: none;
+}
+
+.insights__card span {
+    background-color: var(--color-primary);
+    padding: 0.5rem;
+    border-radius: 50%;
+    color: var(--color-white);
+}
+
+.insights__card--expenses span {
+    background-color: var(--color-danger);
+}
+
+.insights__card--income span {
+    background-color: var(--color-success);
+}
+
+.insights__middle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--gap-2);
+}
+
+.insights__text {
+    margin: 1rem 0 0.6rem;
+    font-size: 1rem;
+}
+
+.insights__progress {
+    position: relative;
+    width: 92px;
+    height: 92px;
+    border-radius: 50%;
+}
+
+.insights__graphic {
+    width: 7rem;
+    height: 7rem;
+}
+
+.insights__graphic circle {
+    fill: none;
+    stroke: var(--color-primary);
+    stroke-width: 14;
+    stroke-linecap: round;
+    transform: translate(5px, 5px);
+    stroke-dasharray: 110;
+    stroke-dashoffset: 92;
+}
+
+.insights__card circle {
+    stroke-dashoffset: -30;
+    stroke-dasharray: 200;
+}
+
+.insights__card--expenses circle {
+    stroke-dashoffset: 20;
+    stroke-dasharray: 80;
+}
+
+.insights__card--income circle {
+    stroke-dashoffset: 35;
+    stroke-dasharray: 110;
+}
+
+.insights__percentage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.insights__card small {
+    margin-top: 1.3rem;
+    display: block;
+}
+
+/*>> RECENT ORDERS */
+.subtitle {
+    margin-bottom: 1.5rem;
+}
+
+/* !.recent-orders a {
+    text-align: center;
+    display: block;
+    margin: 1rem auto;
+} */
+
+/* >> MAIN TOP */
+.main__top {
+    grid-area: main__top;
+    height: 80px;
+    gap: var(--gap-2);
+    position: sticky;
+    top: 0;
+    background-color: var(--color-background);
+}
+
+.menu {
+    display: none;
+}
+
+.theme-toggler {
+    background-color: var(--color-light);
+    height: 1.6rem;
+    width: 4.2rem;
+    cursor: pointer;
+    border-radius: var(--border-radius-1);
+}
+
+.theme-toggler span {
+    font-size: 1.2rem;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.theme-toggler span.active {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border-radius: var(--border-radius-1);
+}
+
+.main__profile {
+    display: flex;
+    gap: 2rem;
+    text-align: right;
+}
+
+.profile__photo {
+    width: 2.8rem;
+    height: 2.8rem;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+/*>>> MAIN ASIDE */
+.main__aside {
+    grid-area: main__aside;
+}
+
+/*>> ============ RECENT UPDATES ===============  */
+.recent-updates {
+    margin-top: 1rem;
+}
+
+.updates {
+    background-color: var(--color-white);
+    padding: var(--card-padding);
+    border-radius: var(--card-border-radius);
+    box-shadow: var(--box-shadow);
+    transition: box-shadow 300ms ease, background-color 300ms ease;
+}
+
+.updates:hover {
+    box-shadow: none;
+}
+
+.update {
+    display: grid;
+    grid-template-columns: 2.6rem auto;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.add-product {
+    background-color: transparent;
+    border: 2px dashed var(--color-primary);
+    color: var(--color-primary);
+    border-radius: var(--border-radius-3);
+    padding: 1.2rem 0;
+    box-shadow: var(--box-shadow);
+    margin: 1rem 0;
+    cursor: pointer;
+}
+
+.add-product:hover {
+    box-shadow: none;
+}
+
+.add-product__info {
+    gap: var(--gap-1);
+}
+
+.add-product__text {
+    font-weight: 600;
+}
+
+
+/*>> =================== SALES ANALYTICS ==============  */
+.sales-analytics {
+    margin-top: 2rem;
+}
+
+.analytics__item {
+    background-color: var(--color-white);
+    gap: 1rem;
+    margin-bottom: 0.7rem;
+    padding: 1.4rem var(--card-padding);
+    border-radius: var(--border-radius-3);
+    box-shadow: var(--box-shadow);
+    transition: box-shadow 300ms ease, background-color 300ms ease;
+}
+
+.analytics__item:hover {
+    box-shadow: none;
+}
+
+.analytics__info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    width: 100%;
+}
+
+.sales-analytics .icon {
+    padding: 0.6rem;
+    color: var(--color-white);
+    border-radius: 50%;
+    background-color: var(--color-primary);
+    display: flex;
+}
+
+.analytics__offline .icon {
+    background-color: var(--color-danger);
+}
+
+.analytics__customers .icon {
+    background-color: var(--color-success);
+}
+
+
+
+/*>> ====================== MEDIA QUERIS ============== */
+@media screen and (max-width: 1300px) {
+    .main {
+        grid-template-areas:
+            "totals main__aside"
+            "totals main__aside"
+            "table table";
+        grid-template-columns: auto 25rem;
+    }
+
+    .insights {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .recent-orders {
+        grid-area: table;
+    }
+}
+
+
+/* >> ============ MEDIA QUERIS TABLETS MOVILES ======= << */
+@media screen and (max-width: 992px) {
+    .main {
+        margin-top: 80px;
+    }
+
+    .main__top {
+        position: fixed;
+        top: 0;
+        left: 0;
+        align-items: center;
+        padding: 0 0.8rem;
+        height: 80px;
+        background-color: var(--color-white);
+        width: 100%;
+        z-index: 0;
+        box-shadow: 0 1rem 1rem var(--color-light);
+    }
+
+    .menu {
+        display: inline-block;
+        background-color: transparent;
+        cursor: pointer;
+        counter-reset: var(--color-dark);
+        position: absolute;
+        left: 1rem;
+    }
+
+    .menu span {
+        font-size: 2.5rem;
+        color: var(--color-dark);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .main {
+        grid-template-areas:
+            "totals"
+            "table"
+            "main__aside";
+        grid-template-columns: auto;
+    }
+
+    .insights {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .recent-orders {
+        grid-area: table;
+    }
+}
+
+
+/* ... 710 LINEAS CSS */
